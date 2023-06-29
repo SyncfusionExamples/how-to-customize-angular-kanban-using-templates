@@ -1,0 +1,29 @@
+<ejs-kanban [dataSource]="localData" keyField="Status" [swimlaneSettings]='swimlaneSettings'
+ [cardSettings]="cardSettings" height="100%" width="100%">
+  <e-columns>
+    <e-column *ngFor="let column of columns;" headerText={{column.headerText}}
+     keyField='{{column.keyField}}'>
+    <ng-template #template let-data>
+      <div class="header-template-wrap">
+        <span class="header-icon e-icons {{data.keyField}}"></span>
+        <span class="header-text">{{data.headerText}}</span>
+      </div>
+    </ng-template>
+    <ng-template #swimlaneSettingsTemplate let-data>
+      <div class="e-swimlane-header">
+        <img src="./assets/kanban/image/{{data.keyField}}.png" alt="{{data.keyField}}"/>
+        <span class="e-swimlane-text">{{data.keyField}}</span>
+      </div>
+    </ng-template>
+    <ng-template #cardSettingsTemplate let-data>
+      <div class="e-card-wrapper">
+        <span class="e-card-header">{{data.Title}}</span>
+        <span class="e-card-content">{{data.Summary}}</span>
+        <span class="e-priority">Priority: {{data.Priority}}</span>
+      </div>
+    </ng-template>
+  </e-column>
+  </e-columns>
+</ejs-kanban>
+
+
