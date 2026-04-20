@@ -1,11 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { CardSettingsModel, ColumnsModel, SwimlaneSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { Component, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { KanbanModule, CardSettingsModel, ColumnsModel, SwimlaneSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  imports: [KanbanModule,CommonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class AppComponent {
   title = 'example';
