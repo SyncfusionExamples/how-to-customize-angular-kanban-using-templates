@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { KanbanModule } from '@syncfusion/ej2-angular-kanban';
+import { CommonModule } from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { KanbanModule } from '@syncfusion/ej2-angular-kanban';
   ],
   imports: [
     BrowserModule,
-    KanbanModule 
+    KanbanModule ,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
